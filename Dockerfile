@@ -14,10 +14,7 @@ RUN ln -s /opt/liferay-portal-7.0-ce-ga1 /opt/liferay \
  && ln -s /opt/liferay/tomcat-8.0.32 /opt/liferay/tomcat
 RUN echo -e '\nCATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"' >> /opt/liferay/tomcat/bin/setenv.sh
 
-COPY assets/supervisord.conf /etc/supervisord.conf
-COPY assets/init.sh /opt/liferay/init.sh
 
-VOLUME ["/opt/liferay"]
 
 EXPOSE 8080
 
